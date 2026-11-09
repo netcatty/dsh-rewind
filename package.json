@@ -1,6 +1,6 @@
 {
   "name": "@netcatty/dsh-rewind",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "description": "Conversation rewind for DeepSeek Harness: cut the model context back to any of your earlier messages, optionally restore the files that turn changed, and put the original text back in the composer",
   "type": "module",
   "main": "lib/index.js",
