@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Rebobinar a conversa",
+    "description": "Volta a conversa até uma das suas mensagens anteriores, restaura opcionalmente os arquivos alterados nesse turno e devolve o texto original à caixa de entrada. O log apenas recebe um marcador; o histórico nunca é reescrito."
+  }
+}

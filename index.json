@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "title": {
+    "en": "dsh-rewind",
+    "zh": "dsh-rewind"
+  },
+  "description": {
+    "en": "A single-plugin index so Plugins → Discover can list and install dsh-rewind from npm.",
+    "zh": "单插件索引：在「插件 → 发现」里直接浏览并安装 dsh-rewind（走 npm，不需要 git）。"
+  },
+  "metadata": {
+    "categories": {
+      "session": {
+        "title": {
+          "en": "Sessions",
+          "zh": "会话"
+        }
+      }
+    },
+    "labels": {},
+    "sortKeys": {}
+  },
+  "plugins": [
+    {
+      "name": "@netcatty/dsh-rewind",
+      "title": {
+        "en": "Rewind conversation",
+        "zh": "回退对话"
+      },
+      "description": {
+        "en": "Cut the conversation back to one of your earlier messages, optionally restore the files that turn changed, and put the original text back in the composer.",
+        "zh": "把对话回退到更早的一条自己的消息，可连这一轮改过的文件一起还原，原文自动放回输入框。"
+      },
+      "icon": "https://cdn.jsdelivr.net/npm/@netcatty/dsh-rewind@0.1.13/icon.svg",
+      "author": "netcatty",
+      "homepage": "https://www.npmjs.com/package/@netcatty/dsh-rewind",
+      "repository": {
+        "url": "https://github.com/netcatty/dsh-rewind"
+      },
+      "metadata": {
+        "category": "session",
+        "keywords": [
+          "dsh-plugin",
+          "deepseek-harness",
+          "rewind",
+          "undo",
+          "checkpoint",
+          "file-restore"
+        ],
+        "labels": [],
+        "sortKeys": {}
+      },
+      "versions": [
+        {
+          "version": "0.1.13",
+          "publishTimestamp": 1794228147,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.1"
+          }
+        }
+      ]
+    }
+  ]
+}

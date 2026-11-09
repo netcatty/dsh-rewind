@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Rebobinar la conversación",
+    "description": "Retrocede la conversación hasta uno de tus mensajes anteriores, restaura opcionalmente los archivos que cambió ese turno y devuelve el texto original al cuadro de entrada. El registro solo añade una marca; el historial nunca se reescribe."
+  }
+}

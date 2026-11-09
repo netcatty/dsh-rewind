@@ -1,0 +1,8 @@
+# dsh-rewind bundle: one Host row plus the Web Client half declared in
+# package.json `dsh.client`. The Host owns the surface marker, the file
+# pre-image archive and the /rewind command; the Client owns the rewind button
+# under a completed Turn, the confirmation dialog and the composer refill.
+- insert:
+    - id: dsh-rewind
+      name: '@netcatty/dsh-rewind'
+      config: {}

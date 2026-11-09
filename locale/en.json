@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Rewind conversation",
+    "description": "Cut the conversation back to one of your earlier messages, optionally restore the files that turn changed, and put the original text back in the composer. The log only gains a rewind marker; history is never rewritten."
+  }
+}

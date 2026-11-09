@@ -1,0 +1,70 @@
+{
+  "name": "@netcatty/dsh-rewind",
+  "version": "0.1.13",
+  "description": "Conversation rewind for DeepSeek Harness: cut the model context back to any of your earlier messages, optionally restore the files that turn changed, and put the original text back in the composer",
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "files": [
+    "index.json",
+    "lib",
+    "locale",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "CHANGELOG.md",
+    "icon.svg",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "engines": {
+    "dsh": ">=0.2.2-rc.1",
+    "node": "^22.15.0 || >=24.0.0"
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js && node --check lib/surface.js && node --check lib/store.js && node -e \"import('./lib/index.js')\"",
+    "test": "node --test test/*.test.mjs"
+  },
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "rewind",
+    "undo",
+    "checkpoint"
+  ],
+  "author": "netcatty",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netcatty/dsh-rewind.git"
+  },
+  "homepage": "https://github.com/netcatty/dsh-rewind#readme",
+  "bugs": {
+    "url": "https://github.com/netcatty/dsh-rewind/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

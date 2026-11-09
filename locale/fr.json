@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Rembobiner la conversation",
+    "description": "Ramène la conversation à l'un de vos messages précédents, restaure éventuellement les fichiers modifiés par ce tour et remet le texte d'origine dans le champ de saisie. Le journal ne reçoit qu'un marqueur ; l'historique n'est jamais réécrit."
+  }
+}

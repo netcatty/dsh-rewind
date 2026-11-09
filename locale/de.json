@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Unterhaltung zurückspulen",
+    "description": "Die Unterhaltung auf eine frühere eigene Nachricht zurücksetzen, wahlweise die in diesem Durchgang geänderten Dateien wiederherstellen und den Originaltext zurück ins Eingabefeld legen. Das Protokoll erhält nur eine Markierung; die Historie wird nie umgeschrieben."
+  }
+}
