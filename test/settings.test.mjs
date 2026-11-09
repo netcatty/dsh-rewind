@@ -46,3 +46,10 @@ test('a settings file round-trips and a corrupt file reads as absent', () => {
     rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('the archive switch is a boolean and defaults to the plugin row', () => {
+  assert.equal(normalizeSettings({ archiveFiles: false }).archiveFiles, false);
+  assert.equal(resolveLimits({ archiveFiles: false }, { archiveFiles: true }).archiveFiles, false);
+  assert.equal(resolveLimits({}, { archiveFiles: false }).archiveFiles, false);
+  assert.equal(resolveLimits({}, {}).archiveFiles, true);
+});

@@ -27,7 +27,7 @@ DeepSeek Harness 插件：**把对话就地回退到任意一条自己发过的�
 | 输入框回填 | 撤回的原文写回输入框，改完直接重发 |
 | 渲染同步 | 被撤回的轮次在对话里隐藏，重发新消息不会误伤新内容 |
 | 确认浮层 | 先列影响范围（原文、受影响文件、将还原还是将删除），再执行 |
-| 设置页 | 设置 → 回退对话：快照轮次/文件数/占用、数据目录、清空快照 |
+| 设置页 | 设置 → 内置插件 → 回退对话：快照状态、容量上限、隔离区、清空 |
 | 命令入口 | `/rewind` 列出可回退消息，`/rewind <序号>` 回退，`/rewind <序号> files` 连文件一起还原；`/undo` 一键撤回最近一轮 |
 | 命令回填 | 命令执行后原文同样自动回到输入框（Host 排队、客户端消费一次） |
 | 自检 | `GET /api/dsh-rewind/selfcheck` 报告接线状态、最近告警，以及 blob/隔离区的完整性（缺失、孤儿、损坏行）；设置页顶行直接显示结果 |
@@ -80,9 +80,9 @@ $DSH_HOME/dsh-plugins/dsh-rewind/archive/
 
 单文件上限 2 MiB、每轮最多 200 个文件、全局最多 500 轮；`.git` 目录下的内容永不记录。
 
-前三个上限在「设置 → 回退对话」里直接改，保存在 `~/.dsh/dsh-plugins/dsh-rewind/settings.json`，保存后立即生效（会重建归档实例）。`cordis.patch.yml` 插件行里的同名值作为默认值，`archiveFiles` / `archiveDir` 仍只在那里配置。
+三个上限和「捕获文件改动」开关都在「设置 → 内置插件 → 回退对话」里直接改，保存在 `~/.dsh/dsh-plugins/dsh-rewind/settings.json`，保存后立即生效（会重建归档实例）。`cordis.patch.yml` 插件行里的同名值作为默认值；只有 `archiveDir` 仍只能在那里配置。
 
-设置页（设置 → 回退对话）显示轮次/文件数/占用/隔离区与数据目录，可分别清空快照与隔离区；对应 `GET /api/dsh-rewind/stats`、`POST /api/dsh-rewind/clear`、`POST /api/dsh-rewind/clear-quarantine`（均需 `confirm: true`）。
+设置页（设置 → 内置插件 → 回退对话）显示轮次/文件数/占用/隔离区与数据目录，可分别清空快照与隔离区；对应 `GET /api/dsh-rewind/stats`、`POST /api/dsh-rewind/clear`、`POST /api/dsh-rewind/clear-quarantine`（均需 `confirm: true`）。
 
 ## 边界与安全
 
@@ -116,7 +116,7 @@ $DSH_HOME/dsh-plugins/dsh-rewind/archive/
 | `tools/pre-execute` | 把工具执行映射回会话 | 无法归属写入，快照被跳过 |
 | `webServer.register({ kind: 'prefix' })` | 客户端调用面 | 命令仍可用，UI 入口静默缺失 |
 | `commands.register` | `/rewind`、`/undo` | 按钮仍可用 |
-| Client slots：`conversation.composer.dock`、`settings.section` | 按钮注入、浮层、设置页 | 该入口缺失，其余不受影响 |
+| Client slots：`conversation.composer.dock`、`settings.plugins.tab` | 按钮注入、浮层、设置页 | 该入口缺失，其余不受影响 |
 | `react-dom` 的 `createPortal` | 浮层挂到 `body` | 退回树内渲染（位置可能被 dock 容器带偏） |
 
 ## 并发与锁
