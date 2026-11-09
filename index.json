@@ -31,7 +31,7 @@
         "en": "Cut the conversation back to one of your earlier messages, optionally restore the files that turn changed, and put the original text back in the composer.",
         "zh": "把对话回退到更早的一条自己的消息，可连这一轮改过的文件一起还原，原文自动放回输入框。"
       },
-      "icon": "https://cdn.jsdelivr.net/npm/@netcatty/dsh-rewind@0.1.13/icon.svg",
+      "icon": "https://cdn.jsdelivr.net/npm/@netcatty/dsh-rewind@0.1.14/icon.svg",
       "author": "netcatty",
       "homepage": "https://www.npmjs.com/package/@netcatty/dsh-rewind",
       "repository": {
@@ -52,8 +52,8 @@
       },
       "versions": [
         {
-          "version": "0.1.13",
-          "publishTimestamp": 1794228147,
+          "version": "0.1.14",
+          "publishTimestamp": 1794228874,
           "source": {
             "type": "npm"
           },
