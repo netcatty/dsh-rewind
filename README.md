@@ -78,7 +78,9 @@ $DSH_HOME/dsh-plugins/dsh-rewind/archive/
   blobs/<sha256>.bin    改动前的字节
 ```
 
-单文件上限 2 MiB、每轮最多 200 个文件、全局最多 500 轮；`.git` 目录下的内容永不记录。可在 `cordis.patch.yml` 的插件行里用 `maxFileBytes` / `maxFilesPerTurn` / `maxTurns` / `archiveFiles` / `archiveDir` 调整。
+单文件上限 2 MiB、每轮最多 200 个文件、全局最多 500 轮；`.git` 目录下的内容永不记录。
+
+前三个上限在「设置 → 回退对话」里直接改，保存在 `~/.dsh/dsh-plugins/dsh-rewind/settings.json`，保存后立即生效（会重建归档实例）。`cordis.patch.yml` 插件行里的同名值作为默认值，`archiveFiles` / `archiveDir` 仍只在那里配置。
 
 设置页（设置 → 回退对话）显示轮次/文件数/占用/隔离区与数据目录，可分别清空快照与隔离区；对应 `GET /api/dsh-rewind/stats`、`POST /api/dsh-rewind/clear`、`POST /api/dsh-rewind/clear-quarantine`（均需 `confirm: true`）。
 
