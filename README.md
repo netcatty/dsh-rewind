@@ -82,7 +82,7 @@ $DSH_HOME/dsh-plugins/dsh-rewind/archive/
 
 三个上限和「捕获文件改动」开关都在「设置 → 内置插件 → 回退对话」里直接改，保存在 `~/.dsh/dsh-plugins/dsh-rewind/settings.json`，保存后立即生效（会重建归档实例）。`cordis.patch.yml` 插件行里的同名值作为默认值；只有 `archiveDir` 仍只能在那里配置。
 
-设置页（设置 → 内置插件 → 回退对话）显示轮次/文件数/占用/隔离区与数据目录，可分别清空快照与隔离区；对应 `GET /api/dsh-rewind/stats`、`POST /api/dsh-rewind/clear`、`POST /api/dsh-rewind/clear-quarantine`（均需 `confirm: true`）。
+设置页（设置 → 内置插件 → 回退对话）显示轮次/文件数/占用/隔离区与实际的快照目录，可分别清空快照与隔离区；对应 `GET /api/dsh-rewind/stats`、`POST /api/dsh-rewind/clear`、`POST /api/dsh-rewind/clear-quarantine`（均需 `confirm: true`）。
 
 ## 边界与安全
 
